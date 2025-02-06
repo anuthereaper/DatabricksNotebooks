@@ -1,5 +1,6 @@
 # Databricks notebook source
-# SCD TYPE 2 WITH GENERATED IDENTITY/SURROGATE KEYS
+# MAGIC %md
+# MAGIC # SCD TYPE 2 WITH GENERATED IDENTITY/SURROGATE KEYS
 
 # COMMAND ----------
 
@@ -193,4 +194,4 @@
 # MAGIC
 # MAGIC %sql
 # MAGIC --If we want all prior transactions but show only the latest cust_name 
-# MAGIC SELECT txn_id, txn_amt, txn_date, A.cust_id, cust_name, A.cust_id_pk FROM jri.gold.fact_txn A LEFT JOIN jri.gold.dim_cust B ON A.cust_id = B.cust_id where IsCurrent = 1;
+# MAGIC SELECT txn_id, txn_amt, txn_date, A.cust_id, cust_name, B.cust_id_pk FROM jri.gold.fact_txn A LEFT JOIN jri.gold.dim_cust B ON A.cust_id = B.cust_id where IsCurrent = 1;
