@@ -1,0 +1,1 @@
+https://learn.microsoft.com/en-us/azure/databricks/connect/external-systems/synapse-analytics
